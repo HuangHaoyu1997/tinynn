@@ -2,7 +2,6 @@
 
 import numpy as np
 
-
 def random_seed(seed):
     seed = int(seed)
     if seed < 0 or seed > (2 ** 32 - 1):

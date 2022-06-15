@@ -93,7 +93,7 @@ class Dense(Layer):
             self.shapes["w"][0] = inputs.shape[1]
             self._init_params()
         self.ctx = {"X": inputs}
-        return inputs @ self.params["w"] + self.params["b"]
+        return inputs @ self.params["w"] + self.params["b"] # @起到矩阵相乘之作用
 
     def backward(self, grad):
         self.grads["w"] = self.ctx["X"].T @ grad
