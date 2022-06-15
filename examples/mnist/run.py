@@ -19,13 +19,7 @@ def main():
     if args.model_type == "mlp":
         # A multilayer perceptron model
         net = tn.net.Net([
-            tn.layer.Dense(200),
-            tn.layer.ReLU(),
-            tn.layer.Dense(100),
-            tn.layer.ReLU(),
-            tn.layer.Dense(70),
-            tn.layer.ReLU(),
-            tn.layer.Dense(30),
+            tn.layer.Dense(16),
             tn.layer.ReLU(),
             tn.layer.Dense(10)
         ])
@@ -112,7 +106,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_dir", type=str,
                         default=os.path.join(curr_dir, "models"))
     parser.add_argument("--model_path", type=str, default=None)
-    parser.add_argument("--model_type", default="mlp", type=str,
+    parser.add_argument("--model_type", default="cnn", type=str,
                         help="[*mlp|cnn|rnn|lstm]")
     parser.add_argument("--num_ep", default=10, type=int)
     parser.add_argument("--lr", default=1e-3, type=float)
