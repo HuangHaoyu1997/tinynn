@@ -25,7 +25,7 @@ class Layer:
         self._is_training = True  # used in BatchNorm/Dropout layers
         self._is_init = False
 
-        self.ctx = {}
+        self.ctx = {} # ctx应该保存的是前向计算时的x输入变量，用于backward时计算导数用
 
     def __repr__(self):
         shape = None if not self.shapes else self.shapes
